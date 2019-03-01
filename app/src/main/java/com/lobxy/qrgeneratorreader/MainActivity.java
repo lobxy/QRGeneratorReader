@@ -101,22 +101,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
             } else {
                 //if qr contains data
+
                 try {
                     JSONObject jsonObject = new JSONObject(result.getContents());
                     text_value.setText(jsonObject.getString("name"));
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    //if json isn't created, show the contents in the toast.
 
+                    //if json isn't created, show the contents in a toast.
                     Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
 
                     Log.i("READER", "onActivityResult: " + result.getContents());
                 }
 
-//                String a = result.getContents() + "\n" + result.getFormatName();
-//
-//                text_value.setText(a);
-//
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
