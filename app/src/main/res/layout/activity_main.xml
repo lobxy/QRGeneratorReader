@@ -8,52 +8,32 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/main_edit"
-        android:layout_width="wrap_content"
+        android:id="@+id/main_message"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:hint="Type shit here"
+        android:layout_marginBottom="8dp"
+        android:hint="Type here"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/main_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_readCode" />
 
     <ImageView
-        android:id="@+id/main_imageView"
+        android:id="@+id/main_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@+id/main_generateCode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_edit" />
-
-    <Button
-        android:id="@+id/main_readButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Read Code"
-        app:layout_constraintBottom_toTopOf="@+id/main_textValue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/main_textValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_message" />
 
     <Button
         android:id="@+id/main_generateCode"
@@ -62,8 +42,21 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Generate Code"
+        android:layout_marginBottom="8dp"
+        android:text="Generate QR Code"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/main_image" />
+
+    <Button
+        android:id="@+id/main_readCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Read QR Code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
